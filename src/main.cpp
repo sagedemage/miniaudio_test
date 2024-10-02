@@ -41,13 +41,13 @@ int main() {
 
     ma_bool32 is_playing = ma_sound_is_playing(&sound);
 
-    if (is_playing == false) {
+    if (!is_playing) {
         std::cerr << "Sound is not playing!" << std::endl;
     }
 
     ma_bool32 is_looping = ma_sound_is_looping(&sound);
 
-    if (is_looping == false) {
+    if (!is_looping) {
         std::cerr << "Sound is not looping!" << std::endl;
     }
 
