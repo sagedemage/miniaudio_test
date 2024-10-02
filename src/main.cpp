@@ -10,7 +10,7 @@ int main() {
     std::cout << "---------------------------------" << std::endl;
     std::cout << "| Play mp3 file with miniaudio. |" << std::endl;
     std::cout << "---------------------------------" << std::endl;
-    
+
     // Initialize engine using it's default configuration
     ma_result result;
     ma_engine engine;
@@ -20,11 +20,12 @@ int main() {
         std::cerr << "Unable to initialize the engine!" << std::endl;
         return result;
     }
-    
+
     // Load audio file
     ma_sound sound;
     // MA_SOUND_FLAG_DECODE: decode the sound before storing it in memory
-    result = ma_sound_init_from_file(&engine, audio_file, MA_SOUND_FLAG_DECODE, NULL, NULL, &sound);
+    result = ma_sound_init_from_file(&engine, audio_file, MA_SOUND_FLAG_DECODE,
+                                     NULL, NULL, &sound);
     if (result != MA_SUCCESS) {
         std::cerr << "Unable to load the audio file!" << std::endl;
         return result;
@@ -32,7 +33,7 @@ int main() {
 
     // set volume
     ma_sound_set_volume(&sound, volume);
-    
+
     ma_sound_set_looping(&sound, static_cast<ma_bool32>(true));
 
     // Play audio file
@@ -41,17 +42,17 @@ int main() {
     ma_bool32 is_playing = ma_sound_is_playing(&sound);
 
     if (is_playing == false) {
-        std::cerr << "Sound is not playing!" << std::endl;       
+        std::cerr << "Sound is not playing!" << std::endl;
     }
 
     ma_bool32 is_looping = ma_sound_is_looping(&sound);
 
     if (is_looping == false) {
-        std::cerr << "Sound is not looping!" << std::endl;       
+        std::cerr << "Sound is not looping!" << std::endl;
     }
 
     // Game loop
-    while(true) {
+    while (true) {
     }
 
     // Free resources
