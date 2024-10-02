@@ -26,6 +26,7 @@ Checks:   '
           -cppcoreguidelines-pro-bounds-pointer-arithmetic,
           -bugprone-branch-clone,
           -readability-container-data-pointer,
+          -cppcoreguidelines-init-variables,
           '
 # Trojan Source
 # The misc-misleading-identifier, misc-homoglyph, and misc-misleading-bidirectional are
