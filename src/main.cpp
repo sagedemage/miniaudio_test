@@ -57,4 +57,6 @@ int main() {
 
     // Free resources
     ma_engine_uninit(&engine);
+
+    return 0;
 }
