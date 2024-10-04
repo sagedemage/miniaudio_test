@@ -113,13 +113,6 @@ int main() {
     ma_decoding_backend_vtable* p_custom_backend_v_tables[] = {
         &g_ma_decoding_backend_vtable_libvorbis};
 
-    ma_decoder_config decoder_config;
-    decoder_config = ma_decoder_config_init_default();
-    decoder_config.pCustomBackendUserData = NULL;
-    decoder_config.ppCustomBackendVTables = p_custom_backend_v_tables;
-    decoder_config.customBackendCount = sizeof(p_custom_backend_v_tables) /
-                                        sizeof(p_custom_backend_v_tables[0]);
-
     resource_manager_config = ma_resource_manager_config_init();
     resource_manager_config.ppCustomDecodingBackendVTables =
         p_custom_backend_v_tables;
