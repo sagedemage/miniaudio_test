@@ -27,6 +27,9 @@ Checks:   '
           -bugprone-branch-clone,
           -readability-container-data-pointer,
           -cppcoreguidelines-init-variables,
+          -cppcoreguidelines-avoid-c-arrays,
+          -bugprone-easily-swappable-parameters,
+          -llvm-include-order
           '
 # Trojan Source
 # The misc-misleading-identifier, misc-homoglyph, and misc-misleading-bidirectional are
